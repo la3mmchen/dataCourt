@@ -11,7 +11,6 @@ lastupdate = 1454410800
 c = pycurl.Curl()
 c.setopt(c.URL, 'https://jawbone.com/nudge/api/v.1.1/users/@me/moves?updated_after=' + str(lastupdate))
 c.setopt(c.WRITEFUNCTION, buf.write)
-c.setopt(c.PROXY, 'http://pro-campus.noc.fiducia.de:8080')
 c.setopt(c.HTTPHEADER, ["Content-Type: application/json",
 			"Authorization: Bearer access_token"])
 c.setopt(c.VERBOSE, True)
