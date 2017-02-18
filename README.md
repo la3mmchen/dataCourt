@@ -1,2 +1,1 @@
-# dataCourt
-Collect user data from the whole net and give them a centralised home...at least, i try ;)
+Build home automation with open source tools and cheap hardware.
