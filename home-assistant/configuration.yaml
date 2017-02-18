@@ -1,0 +1,89 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: homie-docker
+  # Location required to calculate the time the sun rises and sets
+  latitude: 49.157382
+  longitude: 8.634601
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 125
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: CET
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: lalala
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+notify mails: !include configs/notification-by-mail.yml
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# sensors
+sensor:
+  - platform: yr
+  - platform: synologydsm
+    host: minastirith
+    username: forhomie
+    password: 7wMH2rjDJw3T
+    monitored_conditions:
+      - cpu_total_load
+      - memory_real_usage
+      - network_up
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+
+# Text to speech
+tts:
+  platform: google
+
+# Device Tracking
+device_tracker:
+- platform: fritz
+  host: 192.168.178.1
+
+# mqtt
+mqtt:
+  broker: mqtt
+  port: 1883
+  client_id: homie-1
+  keepalive: 60
+  protocol: 3.1
+  discovery: "discovery/#"
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+    qos: 1
+    retain: true
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+    qos: 1
+    retain: true

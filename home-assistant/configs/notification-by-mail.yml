@@ -1,0 +1,9 @@
+  - name: mail-alex
+    platform: smtp
+    server: smtp.k3wl.net
+    port: 587
+    sender: homie@k3wl.net
+    starttls: true
+    username: m03d3416
+    password: HYjdp54k5E9w
+    recipient: alex-home@k3wl.net
