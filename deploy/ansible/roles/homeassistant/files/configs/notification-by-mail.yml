@@ -4,6 +4,6 @@
     port: 587
     sender: homie@k3wl.net
     starttls: true
-    username: m03d3416
-    password: HYjdp54k5E9w
+    username: !secret mail-alex-user
+    password: !secret mail-alex-password
     recipient: alex-home@k3wl.net

@@ -1,0 +1,4 @@
+- hosts: homie
+  roles:
+    - role: base
+    - role: homeassistant
