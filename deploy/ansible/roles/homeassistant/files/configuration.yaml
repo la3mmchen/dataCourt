@@ -12,7 +12,8 @@ introduction:
 # Enables the frontend
 frontend:
 
-http: !include configs/http-passwords.yml
+http:
+  api_password: !secret http-password
 
 # Checks for available updates
 updater:

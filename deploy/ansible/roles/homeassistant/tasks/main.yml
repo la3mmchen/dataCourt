@@ -7,6 +7,14 @@
   notify:
     - "restart home-assistant"
 - copy:
+    src: "{{ role_path }}/files/secrets.yaml"
+    dest: /home/homeassistant/.homeassistant/secrets.yaml
+    owner: homeassistant
+    group: homeassistant
+    mode: 774
+  notify:
+    - "restart home-assistant"
+- copy:
     src: "{{ role_path }}/files/configs/"
     dest: /home/homeassistant/.homeassistant/configs/
     owner: homeassistant
