@@ -1,0 +1,8 @@
+- copy:
+    src: "{{role_path}}/files/mosquitto.conf"
+    dest: "{{mqtt.config_dir}}/mosquitto.conf"
+    owner: "{{mqtt.user}}"
+    group: "{{mqtt.group}}"
+    mode: "{{mqtt.perms}}"
+  notify:
+    - "restart mqtt"

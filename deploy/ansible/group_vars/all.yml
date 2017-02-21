@@ -1,0 +1,17 @@
+# Basics
+apt:
+  listd: "/etc/apt/sources.list.d"
+
+# homeassistant
+homeassistant:
+  config_dir: "/home/homeassistant/.homeassistant"
+  linux_user: "homeassistant"
+  linux_group: "homeassistant"
+  linux_perms: "0774"
+
+# mqtt
+mqtt:
+  config_dir: "/etc/mosquitto"
+  user: "root"
+  group: "root"
+  perms: "0774"

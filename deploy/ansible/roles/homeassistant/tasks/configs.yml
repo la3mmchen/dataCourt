@@ -1,24 +1,24 @@
 - copy:
-    src: "{{ role_path }}/files/configuration.yaml"
-    dest: /home/homeassistant/.homeassistant/configuration.yaml
-    owner: homeassistant
-    group: homeassistant
-    mode: 774
+    src: "{{role_path}}/files/configuration.yaml"
+    dest: "{{homeassistant.config_dir}}/configuration.yaml"
+    owner: "{{homeassistant.linux_user}}"
+    group: "{{homeassistant.linux_group}}"
+    mode: "{{homeassistant.linux_perms}}"
   notify:
     - "restart home-assistant"
 - copy:
-    src: "{{ role_path }}/files/secrets.yaml"
-    dest: /home/homeassistant/.homeassistant/secrets.yaml
-    owner: homeassistant
-    group: homeassistant
-    mode: 774
+    src: "{{role_path}}/files/secrets.yaml"
+    dest: "{{homeassistant.config_dir}}/secrets.yaml"
+    owner: "{{homeassistant.linux_user}}"
+    group: "{{homeassistant.linux_group}}"
+    mode: "{{homeassistant.linux_perms}}"
   notify:
     - "restart home-assistant"
 - copy:
-    src: "{{ role_path }}/files/configs/"
-    dest: /home/homeassistant/.homeassistant/configs/
-    owner: homeassistant
-    group: homeassistant
-    mode: 774
+    src: "{{role_path}}/files/configs/"
+    dest: "{{homeassistant.config_dir}}/configs/"
+    owner: "{{homeassistant.linux_user}}"
+    group: "{{homeassistant.linux_group}}"
+    mode: "{{homeassistant.linux_perms}}"
   notify:
     - "restart home-assistant"

@@ -1,4 +1,5 @@
-- hosts: homie
+- hosts: all
   roles:
     - role: base
     - role: homeassistant
+    - role: mqtt
