@@ -6,6 +6,8 @@
     mode: "{{homeassistant.linux_perms}}"
   notify:
     - "restart home-assistant"
+  tags:
+    - configurations
 - copy:
     src: "{{role_path}}/files/secrets.yaml"
     dest: "{{homeassistant.config_dir}}/secrets.yaml"
@@ -14,6 +16,8 @@
     mode: "{{homeassistant.linux_perms}}"
   notify:
     - "restart home-assistant"
+  tags:
+    - configurations
 - copy:
     src: "{{role_path}}/files/configs/"
     dest: "{{homeassistant.config_dir}}/configs/"
@@ -22,3 +26,5 @@
     mode: "{{homeassistant.linux_perms}}"
   notify:
     - "restart home-assistant"
+  tags:
+    - configurations

@@ -38,6 +38,15 @@ sun:
 # sensors
 sensor:
   - platform: yr
+  - platform: darksky
+    api_key: f14628d274aec1df3fb6ff31b62e43f1
+    monitored_conditions:
+      - summary
+      - icon
+      - temperature
+    update_interval:
+      minutes: 30
+
 
 # Text to speech
 tts:
