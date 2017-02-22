@@ -1,4 +1,5 @@
-- copy:
+- name: add mosquitto repo
+  copy:
     src: "{{role_path}}/files/mosquitto-jessie.list"
     dest: "{{apt.listd}}/mosquitto-jessie.list"
     owner: root
@@ -6,3 +7,7 @@
     mode: 0644
   notify:
     - "apt update"
+
+- name: install mosquitto from repo
+  apt:
+    name: mosquitto
