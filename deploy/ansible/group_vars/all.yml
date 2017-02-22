@@ -1,4 +1,10 @@
 # Basics
+user:
+  homedir: "/home/pi"
+  linux_user: "pi"
+  linux_group: "pi"
+  linux_perms: "0744"
+
 apt:
   listd: "/etc/apt/sources.list.d"
 
@@ -15,3 +21,11 @@ mqtt:
   user: "root"
   group: "root"
   perms: "0774"
+
+# grafana
+grafana:
+  config_dir: "/etc/grafana/"
+  linux_user: "root"
+  linux_group: "grafana"
+  linux_perms: "0744"
+  deb_file: "/opt/grafana-4.1.2-armhf.deb"
