@@ -3,3 +3,4 @@
     - role: base
     - role: homeassistant
     - role: mqtt
+    - role: grafana
