@@ -1,9 +1,2 @@
-- name: Install debian base packages
-  apt: name={{item}} state=installed
-  with_items:
-    - htop
-    - vim
-    - python
-    - build-essential
-    - screen
-    - fail2ban
+- include: install.yml
+- include: users.yml
