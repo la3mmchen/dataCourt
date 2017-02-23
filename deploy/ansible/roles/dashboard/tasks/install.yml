@@ -1,0 +1,7 @@
+- name: Install debian base packages (Dashboard)
+  apt: name={{item}} state=installed
+  with_items:
+    - rubygems
+    - ruby1.9.3
+  tags:
+    - install

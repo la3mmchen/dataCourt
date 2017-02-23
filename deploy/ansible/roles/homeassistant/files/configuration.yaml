@@ -39,7 +39,7 @@ sun:
 sensor:
   - platform: yr
   - platform: darksky
-    api_key: f14628d274aec1df3fb6ff31b62e43f1
+    api_key: !secret darksky-api-key
     monitored_conditions:
       - summary
       - icon

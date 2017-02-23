@@ -1,0 +1,4 @@
+- name: cloning
+  git:
+    repo: https://github.com/home-assistant/hadashboard.git
+    dest: /opt/hadashboard
