@@ -14,6 +14,9 @@ homeassistant:
   linux_user: "homeassistant"
   linux_group: "homeassistant"
   linux_perms: "0774"
+  helpers:
+    path: "/opt/helpers"
+    frequency: "*/5"
 
 # mqtt
 mqtt:
@@ -29,3 +32,4 @@ grafana:
   linux_group: "grafana"
   linux_perms: "0744"
   deb_file: "/opt/grafana-4.1.2-armhf.deb"
+  systemd: "grafana-server"
