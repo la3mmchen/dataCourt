@@ -1,0 +1,30 @@
+- name: Add helpers directory
+  file:
+    path: "{{homeassistant.helpers.path}}"
+    state: directory
+    owner: "{{homeassistant.linux_user}}"
+    group: "{{homeassistant.linux_group}}"
+    mode: "{{homeassistant.linux_perms}}"
+  tags:
+    - configurations
+    - helpers
+
+- name: Copy helpers
+  copy:
+    src: "{{role_path}}/files/helpers/readInfluxToMqtt.sh"
+    dest: "{{homeassistant.helpers.path}}/readInfluxToMqtt.sh"
+    owner: "{{homeassistant.linux_user}}"
+    group: "{{homeassistant.linux_group}}"
+    mode: "{{homeassistant.linux_perms}}"
+  tags:
+    - configurations
+    - helpers
+
+- name: Add cronjob
+  cron:
+    name: "readInfluxToMqtt"
+    minute: "{{homeassistant.helpers.frequency}}"
+    job: "{{homeassistant.helpers.path}}/readInfluxToMqtt.sh"
+  tags:
+    - configurations
+    - helpers

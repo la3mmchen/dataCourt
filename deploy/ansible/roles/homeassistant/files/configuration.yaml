@@ -37,16 +37,61 @@ sun:
 
 # sensors
 sensor:
-  - platform: yr
   - platform: darksky
     api_key: !secret darksky-api-key
     monitored_conditions:
       - summary
       - icon
       - temperature
+      - humidity
+      - precip_probability
+      - precip_intensity
+      - wind_speed
+      - pressure
+      - wind_bearing
+      - apparent_temperature
     update_interval:
       minutes: 30
-
+  - platform: mqtt
+    state_topic: "f007th/2/temperature"
+    name: "LivingRoom/temperature"
+    unit_of_measurement: "°C"
+    value_template: '{{ value_json[1] }}'
+  - platform: mqtt
+    state_topic: "f007th/2/humidity"
+    name: "LivingRoom/humidity"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json[1] }}'
+  - platform: mqtt
+    state_topic: "f007th/3/temperature"
+    name: "Child/temperature"
+    unit_of_measurement: "°C"
+    value_template: '{{ value_json[1] }}'
+  - platform: mqtt
+    state_topic: "f007th/3/humidity"
+    name: "Child/humidity"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json[1] }}'
+  - platform: mqtt
+    state_topic: "f007th/4/temperature"
+    name: "Office/temperature"
+    unit_of_measurement: "°C"
+    value_template: '{{ value_json[1] }}'
+  - platform: mqtt
+    state_topic: "f007th/4/humidity"
+    name: "Office/humidity"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json[1] }}'
+  - platform: mqtt
+    state_topic: "f007th/5/temperature"
+    name: "Bedroom/temperature"
+    unit_of_measurement: "°C"
+    value_template: '{{ value_json[1] }}'
+  - platform: mqtt
+    state_topic: "f007th/5/humidity"
+    name: "Bedroom/humidity"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json[1] }}'
 
 # Text to speech
 tts:
@@ -54,8 +99,11 @@ tts:
 
 # Device Tracking
 device_tracker:
-- platform: fritz
-  host: 192.168.178.1
+  - platform: fritz
+    host: 192.168.178.1
+  - platform: unifi
+    username: homie
+    password: !secret homie-ubiquiti
 
 # mqtt
 mqtt:
