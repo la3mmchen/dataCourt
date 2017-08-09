@@ -1,5 +1,0 @@
-[homie]
-homie		ansible_ssh_host=homie ansible_user=root
-
-[remoteaccess]
-homie		ansible_ssh_host=homie.k3wl.de ansible_user=root ansible_port=4422

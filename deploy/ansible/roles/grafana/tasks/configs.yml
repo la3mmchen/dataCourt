@@ -1,8 +1,0 @@
-- copy:
-    src: "{{role_path}}/files/grafana.ini"
-    dest: "{{grafana.config_dir}}/grafana.ini"
-    owner: "{{grafana.linux_user}}"
-    group: "{{grafana.linux_group}}"
-    mode: "{{grafana.linux_perms}}"
-  notify:
-    - "restart grafana"

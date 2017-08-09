@@ -1,4 +1,0 @@
-- name: retrieve known_devices.yaml from homie
-  fetch:
-    src: "{{homeassistant.config_dir}}/known_devices.yaml"
-    dest: "{{role_path}}/files/fromRemote"

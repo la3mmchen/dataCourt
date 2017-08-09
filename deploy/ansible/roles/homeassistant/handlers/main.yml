@@ -1,2 +1,0 @@
-- name: "restart home-assistant"
-  service: "name=home-assistant@pi state=restarted"

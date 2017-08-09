@@ -1,9 +1,0 @@
-- name: add .bashrc
-  copy:
-    src: "{{role_path}}/files/.bashrc"
-    dest: "{{user.homedir}}/.bashrc"
-    owner: "{{user.linux_user}}"
-    group: "{{user.linux_group}}"
-    mode: "{{user.linux_perms}}"
-  notify:
-    - "apt update"
