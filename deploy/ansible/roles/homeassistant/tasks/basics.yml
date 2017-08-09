@@ -8,3 +8,5 @@
     - python3-venv
     - python3-pip
     - python3-lxml
+  tags:
+    - install
